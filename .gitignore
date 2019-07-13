@@ -41,8 +41,22 @@
 *.su
 *.idb
 *.pdb
-bin/Debug/
-bin/Release/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
 
 # Kernel Module Compile Results
 *.mod*
