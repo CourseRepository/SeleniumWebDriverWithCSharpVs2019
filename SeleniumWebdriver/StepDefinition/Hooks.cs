@@ -14,7 +14,7 @@ namespace SeleniumWebdriver.StepDefinition
         public void GivenIHaveEnteredIntoTheCalculator(int p0)
         {
             //ScenarioContext.Current.Pending();
-            //Assert.Fail();
+            Assert.Fail();
         }
 
         [When(@"I press add")]

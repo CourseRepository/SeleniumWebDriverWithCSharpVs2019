@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SeleniumWebdriver.ComponentHelper;
+﻿using SeleniumWebdriver.ComponentHelper;
+using System;
 using TechTalk.SpecFlow;
 
 namespace SeleniumWebdriver.GeneralHook
@@ -10,17 +7,15 @@ namespace SeleniumWebdriver.GeneralHook
     [Binding]
     public sealed class GeneralHook
     {
-        private static ScenarioContext Context;
+        private static ScenarioContext _scenarioContext;
+        private static FeatureContext _featureContext;
 
-        public GeneralHook(ScenarioContext sContext)
-        {
-            Context = sContext;
-        }
-
+        
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
             Console.WriteLine("BeforeTestRun Hook");
+            
         }
 
         [AfterTestRun]
@@ -47,16 +42,23 @@ namespace SeleniumWebdriver.GeneralHook
             Console.WriteLine("BeforeScenario Hook");
         }
 
+        [BeforeScenario]
+        public static void BeforeScenarioContextInjection(FeatureContext featureContext,ScenarioContext scenarioContext)
+        {
+            _featureContext = featureContext;
+            _scenarioContext = scenarioContext;
+        }
+
         [AfterScenario]
         public static void AfterScenario()
         {
             Console.WriteLine("AfterScenario Hook");
-            if (Context.TestError != null)
+            if (_scenarioContext.TestError != null)
             {
-                string name = Context.ScenarioInfo.Title + ".jpeg";
+                string name = _scenarioContext.ScenarioInfo.Title + ".jpeg";
                 GenericHelper.TakeScreenShot(name);
-                Console.WriteLine(Context.TestError.Message);
-                Console.WriteLine(Context.TestError.StackTrace);
+                Console.WriteLine(_scenarioContext.TestError.Message);
+                Console.WriteLine(_scenarioContext.TestError.StackTrace);
             }
         }
     }
