@@ -4,7 +4,7 @@
 
 Background: Pre-Condition
 	# Given Stpe
-	Given User is at Home Page with url "http://localhost:5001/"
+	Given User is at Home Page with url "http://localhost:80/"
 	And File a Bug should be visible
 
 #@Smoke
@@ -17,10 +17,10 @@ Scenario: Login scenario of BugZilla
 	When I click on Logout button at enter bug page
 	Then User should be logged out and should be at Home Page
 
-Scenario: Create Bug scenario of Bugzilla
+Scenario: Create Bug scenario of Bugzilla_1
 	When I click on "File a Bug" Link
-	Then User should be at Login Page with title "Log in to Bugzilla1"
-	When I provide the "rahul@bugzila.com", "rathore" and click on Login button
+	Then User should be at Login Page with title "Log in to Bugzilla"
+	When I provide the "rahul@bugzila.com", "welcome" and click on Login button
 	Then User Should be at Enter Bug page with title "Enter Bug"
 	When I click on Testng link in the page
 	Then User Should be at Bug Detail page with title "Enter Bug: Testng"

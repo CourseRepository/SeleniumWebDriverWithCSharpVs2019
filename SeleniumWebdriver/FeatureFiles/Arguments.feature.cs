@@ -91,7 +91,7 @@ namespace SeleniumWebdriver.FeatureFiles
         {
 #line 5
 #line 7
- testRunner.Given("User is at Home Page with url \"http://localhost:5001/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User is at Home Page with url \"http://localhost:80/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.And("File a Bug should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -125,11 +125,11 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create Bug scenario of Bugzilla")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create Bug scenario of Bugzilla_1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Arguments")]
-        public virtual void CreateBugScenarioOfBugzilla()
+        public virtual void CreateBugScenarioOfBugzilla_1()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Bug scenario of Bugzilla", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Bug scenario of Bugzilla_1", null, ((string[])(null)));
 #line 20
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -138,9 +138,9 @@ this.FeatureBackground();
 #line 21
  testRunner.When("I click on \"File a Bug\" Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.Then("User should be at Login Page with title \"Log in to Bugzilla1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User should be at Login Page with title \"Log in to Bugzilla\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
- testRunner.When("I provide the \"rahul@bugzila.com\", \"rathore\" and click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I provide the \"rahul@bugzila.com\", \"welcome\" and click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then("User Should be at Enter Bug page with title \"Enter Bug\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
