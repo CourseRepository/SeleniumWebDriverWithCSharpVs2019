@@ -11,6 +11,7 @@ namespace SeleniumWebdriver.Configuration
         Firefox,
         Chrome,
         IExplorer,
-        PhantomJs
+        PhantomJs,
+        Edge
     }
 }

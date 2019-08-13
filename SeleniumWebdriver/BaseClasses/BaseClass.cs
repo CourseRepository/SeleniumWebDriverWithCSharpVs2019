@@ -7,6 +7,7 @@ using log4net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
@@ -93,10 +94,22 @@ namespace SeleniumWebdriver.BaseClasses
             return driver;
         }
 
+        private static EdgeDriver GetEdgeDriver()
+        {
+            EdgeDriverService edgeDriverService = EdgeDriverService.CreateDefaultService();
+            edgeDriverService.HideCommandPromptWindow = true;
+            EdgeDriver edgeDriver = new EdgeDriver(edgeDriverService);
+            return edgeDriver;
+        }
+        /*================== Support for PhantomJs has been stoped in recent version of Selenium ==============
+         
+            Use Chrome or firefox headless mode
+             
+             */
         //private static PhantomJSDriver GetPhantomJsDriver()
         //{
         //    PhantomJSDriver driver = new PhantomJSDriver(GetPhantomJsDrvierService());
-           
+
         //    return driver;
         //}
 
@@ -117,7 +130,7 @@ namespace SeleniumWebdriver.BaseClasses
         //    Logger.Info(" Using PhantomJS Driver Service  ");
         //    return service;
         //}
-      
+
 
         [AssemblyInitialize]
         //[BeforeFeature()]
@@ -144,9 +157,15 @@ namespace SeleniumWebdriver.BaseClasses
                     Logger.Info(" Using Internet Explorer Driver  ");
                     break;
 
+                // Deprecated 
                 case BrowserType.PhantomJs:
                     //ObjectRepository.Driver = GetPhantomJsDriver();
                     Logger.Info(" Using PhantomJs Driver  ");
+                    break;
+
+                case BrowserType.Edge:
+                    ObjectRepository.Driver = GetEdgeDriver();
+                    Logger.Info(" Using Edge Driver  ");
                     break;
 
                 default:

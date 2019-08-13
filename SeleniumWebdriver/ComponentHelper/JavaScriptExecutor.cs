@@ -43,5 +43,18 @@ namespace SeleniumWebdriver.ComponentHelper
         }
 
 
+        /// <summary>
+        /// api to click using java script
+        /// </summary>
+        /// <param name="locator"></param>
+        public static void ScrollIntoViewAndClick(By locator)
+        {
+            IWebElement element = GenericHelper.GetElement(locator);
+            ExecuteScript("arguments[0].scrollIntoView()",element);
+            ExecuteScript("arguments[0].click();", element);
+            Thread.Sleep(300);
+        }
+
+
     }
 }

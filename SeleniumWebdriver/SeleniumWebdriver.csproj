@@ -212,6 +212,7 @@
     <Compile Include="TestScript\Popups\TestPopups.cs" />
     <Compile Include="TestScript\Question\Frameset\TestFrameSet.cs" />
     <Compile Include="TestScript\Question\GetExecutionPath\TestGetExecutionPath.cs" />
+    <Compile Include="TestScript\Question\KendoDropDown\TestKendoDropDown.cs" />
     <Compile Include="TestScript\Question\MinMax.cs" />
     <Compile Include="TestScript\Question\SubString.cs" />
     <Compile Include="TestScript\Question\TestFileDownload.cs" />

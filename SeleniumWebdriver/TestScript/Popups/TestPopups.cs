@@ -10,6 +10,7 @@ using SeleniumWebdriver.Settings;
 using log4net;
 using OpenQA.Selenium.Support.UI;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
+using System.Threading;
 
 namespace SeleniumWebdriver.TestScript.Popups
 {
@@ -26,9 +27,9 @@ namespace SeleniumWebdriver.TestScript.Popups
             BrowserHelper.SwitchToWindow(1);
             IWebElement textarea = ObjectRepository.Driver.FindElement(By.Id("textareaCode"));
             JavaScriptExecutor.ExecuteScript("document.getElementById('textareaCode').setAttribute('style','display: inline;')");
-            TextBoxHelper.ClearTextBox(By.CssSelector("#textareawrapper"));
+            //TextBoxHelper.ClearTextBox(By.CssSelector("#textareawrapper"));
             BrowserHelper.SwitchToFrame(By.Id("iframeResult"));
-           // ButtonHelper.ClickButton(By.XPath("//button[text()='Try it']"));
+            ButtonHelper.ClickButton(By.XPath("//button[text()='Try it']"));
             var text = JavaScriptPopHelper.GetPopUpText();
             JavaScriptPopHelper.ClickOkOnPopup();
             //IAlert alert = ObjectRepository.Driver.SwitchTo().Alert();
@@ -38,8 +39,8 @@ namespace SeleniumWebdriver.TestScript.Popups
             GenericHelper.WaitForWebElement(By.Id("textareaCode"), TimeSpan.FromSeconds(60));
             //TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
             //TextBoxHelper.TypeInTextBox(By.Id("textareaCode"),text);
-            Logger.Info("Test Alert Complete");
-            GenericHelper.Wait(ExpectedConditions.ElementIsVisible(By.Id("id")), TimeSpan.FromSeconds(60));
+            Logger.Info("Test Alert Complete" + text);
+           // GenericHelper.Wait(ExpectedConditions.ElementIsVisible(By.Id("id")), TimeSpan.FromSeconds(60));
 
         }
 
