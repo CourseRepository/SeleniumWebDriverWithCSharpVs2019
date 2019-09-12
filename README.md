@@ -2,7 +2,7 @@
 
 Selenium WebDriver using CSharp as language binding with support of Specflow 3 and VS2019 
 
-## Course Link
+## Course Link (Discount Coupon)
 
 https://www.udemy.com/course/bdd-with-selenium-webdriver-and-speckflow-using-c/?couponCode=21PERCENTOFF
 
