@@ -158,6 +158,7 @@
     <Compile Include="ComponentHelper\CustomWebElement.cs" />
     <Compile Include="ComponentHelper\FileHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
+    <Compile Include="ComponentHelper\GridHelper.cs" />
     <Compile Include="ComponentHelper\JavaScriptExecutor.cs" />
     <Compile Include="ComponentHelper\JavaScriptPopHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="TestScript\FileUpload\TestFileUploadAction.cs" />
     <Compile Include="TestScript\FindElements\HandleElements.cs" />
     <Compile Include="TestScript\Form\TestSubmitForm.cs" />
+    <Compile Include="TestScript\Grid\TestWebTable.cs" />
     <Compile Include="TestScript\HandleDropDown\DropDownList.cs" />
     <Compile Include="TestScript\HyperLink\TestHyperLink.cs" />
     <Compile Include="TestScript\JavaScript\TestJavaScriptClass.cs" />

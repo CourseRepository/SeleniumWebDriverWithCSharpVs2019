@@ -7,7 +7,7 @@ Background: Pre-Condition
 	Given User is at Home Page with url "http://localhost:80/"
 	And File a Bug should be visible
 
-#@Smoke
+@Smoke
 Scenario: Login scenario of BugZilla
 	# Steps - A Given Step
 	When I click on "File a Bug" Link
