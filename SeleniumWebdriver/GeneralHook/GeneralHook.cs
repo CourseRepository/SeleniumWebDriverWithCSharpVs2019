@@ -1,4 +1,7 @@
-﻿using SeleniumWebdriver.ComponentHelper;
+﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.Gherkin.Model;
+using AventStack.ExtentReports.Reporter;
+using SeleniumWebdriver.ComponentHelper;
 using System;
 using TechTalk.SpecFlow;
 
@@ -9,23 +12,109 @@ namespace SeleniumWebdriver.GeneralHook
     {
         private static ScenarioContext _scenarioContext;
         private static FeatureContext _featureContext;
+        private static ExtentReports _extentReports;
+        private static ExtentHtmlReporter _extentHtmlReporter;
+        private static ExtentTest _feature;
+        private static ExtentTest _scenario;
 
-        
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            Console.WriteLine("BeforeTestRun Hook");
-            
+            _extentHtmlReporter = new ExtentHtmlReporter(@"C:\Data\log\");
+            _extentReports = new ExtentReports();
+            _extentReports.AttachReporter(_extentHtmlReporter);
+        }
+
+        [BeforeFeature]
+        public static void BeforeFeatureStart(FeatureContext featureContext)
+        {
+            if(null != featureContext)
+            {
+                _feature = _extentReports.CreateTest<Feature>(featureContext.FeatureInfo.Title, featureContext.FeatureInfo.Description);
+            }
+        }
+
+        [BeforeScenario]
+        public static void BeforeScenarioStart(ScenarioContext scenarioContext)
+        {
+            if(null != scenarioContext)
+            {
+                _scenarioContext = scenarioContext;
+                _scenario = _feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title, scenarioContext.ScenarioInfo.Description);
+            }
+        }
+
+        [AfterStep]
+        public void AfterEachStep()
+        {
+            // logic -> Given ,when or then
+            // add the node
+
+            ScenarioBlock scenarioBlock = _scenarioContext.CurrentScenarioBlock;
+
+            //switch case
+
+            switch (scenarioBlock)
+            {
+                case ScenarioBlock.Given:
+                    if (_scenarioContext.TestError != null)
+                    {
+                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
+                    }
+                    else
+                    {
+                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                    }
+                    
+                    break;
+                case ScenarioBlock.When:
+                    if (_scenarioContext.TestError != null)
+                    {
+                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
+                    }
+                    else
+                    {
+                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                    }
+
+                    
+                    break;
+                case ScenarioBlock.Then:
+                    if (_scenarioContext.TestError != null)
+                    {
+                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+ "\n" + _scenarioContext.TestError.StackTrace);
+                    }
+                    else
+                    {
+                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                    }
+
+                    
+                    break;
+                default:
+                    if (_scenarioContext.TestError != null)
+                    {
+                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
+                    }
+                    else
+                    {
+                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                    }
+
+                   
+                    break;
+            }
+
         }
 
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            Console.WriteLine("AfterTestRun Hook");
+            _extentReports.Flush();
         }
-
+             
         [BeforeFeature("Tag1")]
-        public static void BeforeFeature()
+        public static void BeforeFeature(FeatureContext featureContext)
         {
             Console.WriteLine("BeforeFeature Hook");
         }
@@ -42,12 +131,13 @@ namespace SeleniumWebdriver.GeneralHook
             Console.WriteLine("BeforeScenario Hook");
         }
 
-        [BeforeScenario]
+        [BeforeScenario("Tag2")]
         public static void BeforeScenarioContextInjection(FeatureContext featureContext,ScenarioContext scenarioContext)
         {
             _featureContext = featureContext;
             _scenarioContext = scenarioContext;
         }
+
 
         [AfterScenario]
         public static void AfterScenario()
@@ -55,7 +145,7 @@ namespace SeleniumWebdriver.GeneralHook
             Console.WriteLine("AfterScenario Hook");
             if (_scenarioContext.TestError != null)
             {
-                string name = _scenarioContext.ScenarioInfo.Title + ".jpeg";
+                string name = _scenarioContext.ScenarioInfo.Title.Replace(" ","") + ".jpeg";
                 GenericHelper.TakeScreenShot(name);
                 Console.WriteLine(_scenarioContext.TestError.Message);
                 Console.WriteLine(_scenarioContext.TestError.StackTrace);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SeleniumWebdriver.ComponentHelper;
 using TechTalk.SpecFlow;
 
 namespace SeleniumWebdriver.StepDefinition
@@ -13,14 +14,14 @@ namespace SeleniumWebdriver.StepDefinition
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int p0)
         {
-            //ScenarioContext.Current.Pending();
-            Assert.Fail();
+            NavigationHelper.NavigateToUrl("http://www.google.com");
         }
 
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
             //ScenarioContext.Current.Pending();
+            Assert.Fail();
         }
 
         [Then(@"the result should be (.*) on the screen")]

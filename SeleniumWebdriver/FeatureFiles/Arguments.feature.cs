@@ -193,34 +193,34 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Bug scenario of Bugzilla with scenario outline", null, @__tags);
-#line 37
+#line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 38
- testRunner.When(string.Format("I click on \"{0}\" Link", flink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.Then(string.Format("User should be at Login Page with title \"{0}\"", lTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When(string.Format("I click on \"{0}\" Link", flink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 40
- testRunner.When(string.Format("I provide the \"{0}\", \"{1}\" and click on Login button", user, pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then(string.Format("User should be at Login Page with title \"{0}\"", lTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
- testRunner.Then(string.Format("User Should be at Enter Bug page with title \"{0}\"", eTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When(string.Format("I provide the \"{0}\", \"{1}\" and click on Login button", user, pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.When("I click on Testng link in the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then(string.Format("User Should be at Enter Bug page with title \"{0}\"", eTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
- testRunner.Then(string.Format("User Should be at Bug Detail page with title \"{0}\"", bTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click on Testng link in the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
- testRunner.When(string.Format("I provide the \"{0}\" , \"{1}\" , \"{2}\" , \"{3}\" and \"{4}\"", severity, harware, platform, summary, desc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then(string.Format("User Should be at Bug Detail page with title \"{0}\"", bTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.And("click on Submit button in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I provide the \"{0}\" , \"{1}\" , \"{2}\" , \"{3}\" and \"{4}\"", severity, harware, platform, summary, desc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.Then("Bug should get created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("click on Submit button in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("User should be at Search page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Bug should get created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
- testRunner.When("I click on Logout button at bug detail page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User should be at Search page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
+ testRunner.When("I click on Logout button at bug detail page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
  testRunner.Then("User should be logged out and should be at Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -245,7 +245,7 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Desc", "Desc - 1")]
         public virtual void CreateBugScenarioOfBugzillaWithScenarioOutline_A()
         {
-#line 37
+#line 38
 this.CreateBugScenarioOfBugzillaWithScenarioOutline("A", "File a Bug", "Log in to Bugzilla", "rahul@bugzila.com", "rathore", "Enter Bug", "Enter Bug: Testng", "critical", "Macintosh", "Other", "Summary - 1", "Desc - 1", ((string[])(null)));
 #line hidden
         }
@@ -269,7 +269,7 @@ this.CreateBugScenarioOfBugzillaWithScenarioOutline("A", "File a Bug", "Log in t
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Desc", "Desc - 2")]
         public virtual void CreateBugScenarioOfBugzillaWithScenarioOutline_B()
         {
-#line 37
+#line 38
 this.CreateBugScenarioOfBugzillaWithScenarioOutline("B", "File a Bug", "Log in to Bugzilla", "rahul@bugzila.com", "rathore", "Enter Bug", "Enter Bug: Testng", "major", "Other", "Linux", "Summary - 2", "Desc - 2", ((string[])(null)));
 #line hidden
         }

@@ -33,6 +33,7 @@ Scenario: Create Bug scenario of Bugzilla_1
 	And User should be at Search page
 	When I click on Logout button at bug detail page
 	Then User should be logged out and should be at Home Page
+
 @ignore
 Scenario Outline: Create Bug scenario of Bugzilla with scenario outline
 	When I click on "<flink>" Link
