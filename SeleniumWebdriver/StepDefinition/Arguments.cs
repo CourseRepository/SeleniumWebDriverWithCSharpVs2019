@@ -70,8 +70,8 @@ namespace SeleniumWebdriver.StepDefinition
         [When(@"I provide the ""(.*)"" , ""(.*)"" , ""(.*)"" , ""(.*)"" and ""(.*)""")]
         public void WhenIProvideTheAnd(string severity, string harware, string platform, string summary, string desc)
         {
-            bPage.SelectFromCombo(severity,harware, platform);
-            bPage.TypeIn(summary, desc);
+            ObjectRepository.bPage.SelectFromCombo(severity,harware, platform);
+            ObjectRepository.bPage.TypeIn(summary, desc);
         }
 
 

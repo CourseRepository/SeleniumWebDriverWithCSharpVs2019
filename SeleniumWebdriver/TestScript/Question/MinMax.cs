@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,13 @@ namespace SeleniumWebdriver.TestScript.Question
             Console.WriteLine(arrayList[0]);
             Console.WriteLine(arrayList[arrayList.Count - 1]);
 
+        }
+
+        [TestMethod]
+        public void GetLocation()
+        {
+            Console.WriteLine(Assembly.GetExecutingAssembly().Location);
+            Console.WriteLine(Assembly.GetExecutingAssembly().CodeBase);
         }
     }
 }

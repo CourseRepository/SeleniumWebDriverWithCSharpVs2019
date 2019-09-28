@@ -57,54 +57,69 @@ namespace SeleniumWebdriver.GeneralHook
             switch (scenarioBlock)
             {
                 case ScenarioBlock.Given:
-                    if (_scenarioContext.TestError != null)
-                    {
-                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
-                    }
-                    else
-                    {
-                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
-                    }
-                    
+                    /*  if (_scenarioContext.TestError != null)
+                      {
+                          _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
+                      }
+                      else
+                      {
+                          _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                      }*/
+                    CreateNode<Given>();
                     break;
                 case ScenarioBlock.When:
-                    if (_scenarioContext.TestError != null)
-                    {
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
-                    }
-                    else
-                    {
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
-                    }
-
-                    
+                    /*   if (_scenarioContext.TestError != null)
+                       {
+                           _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
+                       }
+                       else
+                       {
+                           _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                       }
+   */
+                    CreateNode<When>();
                     break;
                 case ScenarioBlock.Then:
-                    if (_scenarioContext.TestError != null)
-                    {
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+ "\n" + _scenarioContext.TestError.StackTrace);
-                    }
-                    else
-                    {
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
-                    }
-
-                    
+                    /* if (_scenarioContext.TestError != null)
+                     {
+                         _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+ "\n" + _scenarioContext.TestError.StackTrace);
+                     }
+                     else
+                     {
+                         _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+                     }
+ */
+                    CreateNode<Then>();
                     break;
                 default:
-                    if (_scenarioContext.TestError != null)
+                    /*if (_scenarioContext.TestError != null)
                     {
                         _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace);
                     }
                     else
                     {
                         _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
-                    }
+                    }*/
+                    CreateNode<And>();
 
-                   
                     break;
             }
 
+        }
+
+        public void CreateNode<T>() where T : IGherkinFormatterModel
+        {
+            if (_scenarioContext.TestError != null)
+            {
+                string name = @"C:\Data\log\" + _scenarioContext.ScenarioInfo.Title.Replace(" ", "") + ".jpeg";
+                GenericHelper.TakeScreenShot(name);
+                _scenario.CreateNode<T>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" + _scenarioContext.TestError.StackTrace)
+                    .AddScreenCaptureFromPath(name);
+            }
+            else
+            {
+                _scenario.CreateNode<T>(_scenarioContext.StepContext.StepInfo.Text).Pass("");
+            }
         }
 
         [AfterTestRun]

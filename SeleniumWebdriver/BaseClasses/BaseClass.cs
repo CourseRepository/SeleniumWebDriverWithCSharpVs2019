@@ -171,6 +171,7 @@ namespace SeleniumWebdriver.BaseClasses
                 default:
                     throw new NoSutiableDriverFound("Driver Not Found : " + ObjectRepository.Config.GetBrowser().ToString()); 
             }
+            ObjectRepository.Driver.Manage().Cookies.DeleteAllCookies();
             ObjectRepository.Driver.Manage()
                 .Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeOut());
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut());

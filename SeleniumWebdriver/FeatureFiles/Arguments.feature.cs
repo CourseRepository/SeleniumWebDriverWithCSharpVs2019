@@ -91,7 +91,7 @@ namespace SeleniumWebdriver.FeatureFiles
         {
 #line 5
 #line 7
- testRunner.Given("User is at Home Page with url \"http://localhost:80/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User is at Home Page with url \"http://127.0.0.1:80/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.And("File a Bug should be visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -100,11 +100,9 @@ namespace SeleniumWebdriver.FeatureFiles
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Login scenario of BugZilla")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Arguments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Smoke")]
         public virtual void LoginScenarioOfBugZilla()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login scenario of BugZilla", null, new string[] {
-                        "Smoke"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login scenario of BugZilla", null, ((string[])(null)));
 #line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -115,7 +113,7 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("User should be at Login Page with title \"Log in to Bugzilla\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
- testRunner.When("I provide the \"rahul@bugzila.com\", \"rathore\" and click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I provide the \"rahul@bugzila.com\", \"welcome\" and click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.Then("User Should be at Enter Bug page with title \"Enter Bug\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
@@ -186,13 +184,7 @@ this.FeatureBackground();
         
         public virtual void CreateBugScenarioOfBugzillaWithScenarioOutline(string testCase, string flink, string lTitle, string user, string pass, string eTitle, string bTitle, string severity, string harware, string platform, string summary, string desc, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "ignore"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Bug scenario of Bugzilla with scenario outline", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Bug scenario of Bugzilla with scenario outline", null, exampleTags);
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -229,13 +221,12 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create Bug scenario of Bugzilla with scenario outline: A")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Arguments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.IgnoreAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "A")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TestCase", "A")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:flink", "File a Bug")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lTitle", "Log in to Bugzilla")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "rahul@bugzila.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pass", "rathore")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pass", "welcome")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:eTitle", "Enter Bug")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bTitle", "Enter Bug: Testng")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Severity", "critical")]
@@ -246,20 +237,19 @@ this.FeatureBackground();
         public virtual void CreateBugScenarioOfBugzillaWithScenarioOutline_A()
         {
 #line 38
-this.CreateBugScenarioOfBugzillaWithScenarioOutline("A", "File a Bug", "Log in to Bugzilla", "rahul@bugzila.com", "rathore", "Enter Bug", "Enter Bug: Testng", "critical", "Macintosh", "Other", "Summary - 1", "Desc - 1", ((string[])(null)));
+this.CreateBugScenarioOfBugzillaWithScenarioOutline("A", "File a Bug", "Log in to Bugzilla", "rahul@bugzila.com", "welcome", "Enter Bug", "Enter Bug: Testng", "critical", "Macintosh", "Other", "Summary - 1", "Desc - 1", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create Bug scenario of Bugzilla with scenario outline: B")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Arguments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.IgnoreAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "B")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:TestCase", "B")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:flink", "File a Bug")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lTitle", "Log in to Bugzilla")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "rahul@bugzila.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pass", "rathore")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pass", "welcome")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:eTitle", "Enter Bug")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bTitle", "Enter Bug: Testng")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Severity", "major")]
@@ -270,7 +260,7 @@ this.CreateBugScenarioOfBugzillaWithScenarioOutline("A", "File a Bug", "Log in t
         public virtual void CreateBugScenarioOfBugzillaWithScenarioOutline_B()
         {
 #line 38
-this.CreateBugScenarioOfBugzillaWithScenarioOutline("B", "File a Bug", "Log in to Bugzilla", "rahul@bugzila.com", "rathore", "Enter Bug", "Enter Bug: Testng", "major", "Other", "Linux", "Summary - 2", "Desc - 2", ((string[])(null)));
+this.CreateBugScenarioOfBugzillaWithScenarioOutline("B", "File a Bug", "Log in to Bugzilla", "rahul@bugzila.com", "welcome", "Enter Bug", "Enter Bug: Testng", "major", "Other", "Linux", "Summary - 2", "Desc - 2", ((string[])(null)));
 #line hidden
         }
     }
