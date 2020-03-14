@@ -119,6 +119,14 @@ namespace SeleniumWebdriver.ComponentHelper
             return flag;
         }
 
+        public static void WaitForWebElement(IWebElement webElement, TimeSpan timeout)
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));
+            var wait = GetWebdriverWait(timeout);
+            wait.Until(ExpectedConditions.ElementToBeClickable(webElement));
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
+        }
+
         public static IWebElement WaitForWebElementVisisble(By locator, TimeSpan timeout)
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));

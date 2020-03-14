@@ -37,8 +37,8 @@ namespace SeleniumWebdriver.TestScript.Popups
             //alert.Accept();
             ObjectRepository.Driver.SwitchTo().DefaultContent();
             GenericHelper.WaitForWebElement(By.Id("textareaCode"), TimeSpan.FromSeconds(60));
-            //TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
-            //TextBoxHelper.TypeInTextBox(By.Id("textareaCode"),text);
+            TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
+            TextBoxHelper.TypeInTextBox(By.Id("textareaCode"),text);
             Logger.Info("Test Alert Complete" + text);
            // GenericHelper.Wait(ExpectedConditions.ElementIsVisible(By.Id("id")), TimeSpan.FromSeconds(60));
 

@@ -16,5 +16,7 @@ namespace SeleniumWebdriver.ComponentHelper
             ObjectRepository.Driver.Navigate().GoToUrl(Url);
             Logger.Info(" Navigate To Page " + Url);
         }
+
+      
     }
 }

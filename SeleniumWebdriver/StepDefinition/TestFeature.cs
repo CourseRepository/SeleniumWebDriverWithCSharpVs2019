@@ -43,12 +43,14 @@ namespace SeleniumWebdriver.StepDefinition
         {
             ObjectRepository.hPage = new HomePage(ObjectRepository.Driver);
             ObjectRepository.lPage = ObjectRepository.hPage.NavigateToLogin();
+            lPage = ObjectRepository.lPage;
         }
 
         [When(@"I provide the username, password and click on Login button")]
         public void WhenIProvideTheUsernamePasswordAndClickOnLoginButton()
         {
             ePage = lPage.Login(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
+            ObjectRepository.ePage = ePage;
         }
 
         [When(@"I click on Logout button")]

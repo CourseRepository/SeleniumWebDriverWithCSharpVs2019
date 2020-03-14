@@ -58,6 +58,8 @@ namespace SeleniumWebdriver.BaseClasses
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("start-maximized");
+
+            option.AddAdditionalCapability(CapabilityType.AcceptSslCertificates, true, true);
             //option.AddArgument("--headless");
             //option.AddExtension(@"C:\Users\rahul.rathore\Desktop\Cucumber\extension_3_0_12.crx");
             Logger.Info(" Using Chrome Options ");
