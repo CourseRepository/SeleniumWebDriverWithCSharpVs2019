@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.ComponentHelper
 {
-    class FileHelper
+    public class FileHelper
     {
-        public static String SaveScreenShot(String absolutePath, String fileName)
+        public static string SaveScreenShot(string absolutePath)
         {
             var dir = Directory.Exists(absolutePath);
             if (!dir)

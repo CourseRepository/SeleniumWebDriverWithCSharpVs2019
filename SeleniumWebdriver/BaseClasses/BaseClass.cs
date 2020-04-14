@@ -68,10 +68,19 @@ namespace SeleniumWebdriver.BaseClasses
 
         private static InternetExplorerOptions GetIEOptions()
         {
-            InternetExplorerOptions options = new InternetExplorerOptions();
-            options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-            options.EnsureCleanSession = true;
-            options.ElementScrollBehavior = InternetExplorerElementScrollBehavior.Bottom;
+            InternetExplorerOptions options = new InternetExplorerOptions
+            {
+                IntroduceInstabilityByIgnoringProtectedModeSettings = true,
+                //EnsureCleanSession = true,
+                ElementScrollBehavior = InternetExplorerElementScrollBehavior.Bottom,
+                //AcceptInsecureCertificates = true,
+                IgnoreZoomLevel = true,
+                PageLoadStrategy = PageLoadStrategy.Normal,
+                UnhandledPromptBehavior =  UnhandledPromptBehavior.Dismiss,
+                EnableNativeEvents = true,
+            };
+            options.AddAdditionalCapability(CapabilityType.AcceptSslCertificates, true);
+            options.AddAdditionalCapability(CapabilityType.AcceptInsecureCertificates, true);
             Logger.Info(" Using Internet Explorer Options ");
             return options;
         }

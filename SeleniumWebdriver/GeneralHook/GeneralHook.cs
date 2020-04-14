@@ -162,6 +162,7 @@ namespace SeleniumWebdriver.GeneralHook
             {
                 string name = _scenarioContext.ScenarioInfo.Title.Replace(" ","") + ".jpeg";
                 GenericHelper.TakeScreenShot(name);
+                //GenericHelper.TakeScreenShot("testdir",name);
                 Console.WriteLine(_scenarioContext.TestError.Message);
                 Console.WriteLine(_scenarioContext.TestError.StackTrace);
             }

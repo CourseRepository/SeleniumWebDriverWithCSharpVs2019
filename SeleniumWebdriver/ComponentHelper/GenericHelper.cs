@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -106,6 +107,26 @@ namespace SeleniumWebdriver.ComponentHelper
                 return;
             }
             screen.SaveAsFile(filename, ScreenshotImageFormat.Jpeg); Logger.Info(" ScreenShot Taken : " + filename);
+        }
+
+        public static void TakeScreenShot(string DirectoryName, string filename)
+        {
+            if (!Directory.Exists(DirectoryName))
+            {
+                Directory.CreateDirectory(DirectoryName);
+            }
+            filename = GetPath(DirectoryName, filename);
+            var screen = ObjectRepository.Driver.TakeScreenshot();
+            screen.SaveAsFile(filename, ScreenshotImageFormat.Jpeg);
+            Logger.Info(" ScreenShot Taken : " + filename);
+            return;
+        }
+
+        private static string GetPath(string DirectoryName, string filename)
+        {
+            string Location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            filename = Location + Path.DirectorySeparatorChar + DirectoryName + Path.DirectorySeparatorChar + filename + DateTime.UtcNow.ToString("yyyy-MM-dd-mm-ss") + ".jpeg";
+            return filename;
         }
 
         public static bool WaitForWebElement(By locator,TimeSpan timeout) 
