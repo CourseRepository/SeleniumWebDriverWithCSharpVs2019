@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS0649: Field 'PageBase.HomeLink' is never assigned to, and will always have its default value null
+dotnet_diagnostic.CS0649.severity = none
+
+# CS0169: The field 'Arguments.hPage' is never used
+dotnet_diagnostic.CS0169.severity = none
