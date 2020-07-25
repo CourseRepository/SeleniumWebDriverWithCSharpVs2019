@@ -19,6 +19,11 @@ namespace SeleniumWebdriver.TestScript.Question
         private readonly By UploadButton = By.XPath("//input[@value='Press']");
         private readonly string FileLocation = @"C:\Data\log\Exception.txt";
 
+
+        /// <summary>
+        /// This script will do the file upload. But it will only work if the file upload control is of type=file
+        /// <input type="file" name="upfile" />
+        /// </summary>
         [TestMethod]
         public void TestUpload()
         {
