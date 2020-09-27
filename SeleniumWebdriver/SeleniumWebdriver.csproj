@@ -208,6 +208,7 @@
     <Compile Include="StepDefinition\FileUploadStepDfn_1.cs" />
     <Compile Include="StepDefinition\FileUploadStepDfn_2.cs" />
     <Compile Include="StepDefinition\Hooks.cs" />
+    <Compile Include="StepDefinition\Questions\ElementInIframe.cs" />
     <Compile Include="StepDefinition\TestFeature.cs" />
     <Compile Include="StepDefinition\TestFeature2.cs" />
     <Compile Include="TestScript\AngularScript\TestProtractor.cs" />
@@ -244,8 +245,10 @@
     <Compile Include="TestScript\Question\TestFileUploadHeadLess.cs" />
     <Compile Include="TestScript\Question\TestGetDataFromPage.cs" />
     <Compile Include="TestScript\Question\TestIEWithSSL.cs" />
+    <Compile Include="TestScript\Question\TestIsTextPresent.cs" />
     <Compile Include="TestScript\Question\TestKendoUI.cs" />
     <Compile Include="TestScript\Question\TestReadExcelFile.cs" />
+    <Compile Include="TestScript\Question\TestUsingShadowDom.cs" />
     <Compile Include="TestScript\Question\Test_POusingPageFactory.cs" />
     <Compile Include="TestScript\Question\Wait\DynamicWait.cs" />
     <Compile Include="TestScript\Question\Wait\UserLogInSteps.cs" />
@@ -282,6 +285,7 @@
     <None Include="FeatureFiles\FeatureContext.feature" />
     <None Include="FeatureFiles\FileUpload.feature" />
     <None Include="FeatureFiles\Hooks.feature" />
+    <None Include="FeatureFiles\Question\ElementInIframe.feature" />
     <None Include="FeatureFiles\TestFeature.feature" />
     <None Include="FeatureFiles\TestFeature2.feature" />
     <Content Include="NLog.config">
