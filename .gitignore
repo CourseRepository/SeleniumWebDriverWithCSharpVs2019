@@ -66,3 +66,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/.vs/SeleniumWebdriver/v16/TestStore/0/013.testlog
