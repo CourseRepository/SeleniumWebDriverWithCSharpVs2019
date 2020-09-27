@@ -19,7 +19,7 @@ namespace SeleniumWebdriver.ComponentHelper
 {
     public class GenericHelper
     {
-        private static readonly ILog Logger = Log4NetHelper.GetXmlLogger(typeof (GenericHelper));
+        private static readonly ILog Logger = Log4NetHelper.GetXmlLogger(typeof(GenericHelper));
         private static Func<IWebDriver, bool> WaitForWebElementFunc(By locator)
         {
             return ((x) =>
@@ -66,14 +66,14 @@ namespace SeleniumWebdriver.ComponentHelper
         public static WebDriverWait GetWebdriverWait(TimeSpan timeout)
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));
-            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver,timeout)
+            WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout)
             {
                 PollingInterval = TimeSpan.FromMilliseconds(500),
             };
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
             Logger.Info(" Wait Object Created ");
             return wait;
-        }  
+        }
         public static bool IsElemetPresent(By locator)
         {
             try
@@ -85,7 +85,7 @@ namespace SeleniumWebdriver.ComponentHelper
             {
                 return false;
             }
-            
+
         }
 
         public static IWebElement GetElement(By locator)
@@ -129,7 +129,7 @@ namespace SeleniumWebdriver.ComponentHelper
             return filename;
         }
 
-        public static bool WaitForWebElement(By locator,TimeSpan timeout) 
+        public static bool WaitForWebElement(By locator, TimeSpan timeout)
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));
             Logger.Info(" Setting the Explicit wait to 1 sec ");
@@ -170,7 +170,7 @@ namespace SeleniumWebdriver.ComponentHelper
             return flag;
         }
 
-        public static IWebElement Wait(Func<IWebDriver,IWebElement> conditions,TimeSpan timeout)
+        public static IWebElement Wait(Func<IWebDriver, IWebElement> conditions, TimeSpan timeout)
         {
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = (TimeSpan.FromSeconds(1));
             Logger.Info(" Setting the Explicit wait to 1 sec ");
@@ -181,7 +181,20 @@ namespace SeleniumWebdriver.ComponentHelper
             return flag;
         }
 
-        
+        public static bool IsTextPresent(IWebDriver driver, string text)
+        {
+            try
+            {
+                return driver.FindElements(By.XPath($"//*[contains(text(),'{text}')]")).Count >= 1;
+            }
+            catch (NoSuchElementException err)
+            {
+                Logger.Warn(err.StackTrace);
+            }
+            return false;
+        }
+
+
 
     }
 }
