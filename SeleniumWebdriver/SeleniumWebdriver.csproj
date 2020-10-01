@@ -209,6 +209,7 @@
     <Compile Include="StepDefinition\FileUploadStepDfn_2.cs" />
     <Compile Include="StepDefinition\Hooks.cs" />
     <Compile Include="StepDefinition\Questions\ElementInIframe.cs" />
+    <Compile Include="StepDefinition\Questions\FlieUpload.cs" />
     <Compile Include="StepDefinition\TestFeature.cs" />
     <Compile Include="StepDefinition\TestFeature2.cs" />
     <Compile Include="TestScript\AngularScript\TestProtractor.cs" />
@@ -286,6 +287,7 @@
     <None Include="FeatureFiles\FileUpload.feature" />
     <None Include="FeatureFiles\Hooks.feature" />
     <None Include="FeatureFiles\Question\ElementInIframe.feature" />
+    <None Include="FeatureFiles\Question\FileUpload.feature" />
     <None Include="FeatureFiles\TestFeature.feature" />
     <None Include="FeatureFiles\TestFeature2.feature" />
     <Content Include="NLog.config">
