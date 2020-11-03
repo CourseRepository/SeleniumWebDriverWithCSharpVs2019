@@ -1,0 +1,37 @@
+02-Nov-2020-21:25:27 [SeleniumWebdriver.BaseClasses.BaseClass] [INFO] [GetChromeOptions] -  Using Chrome Options 
+02-Nov-2020-21:25:29 [SeleniumWebdriver.BaseClasses.BaseClass] [INFO] [InitWebdriver] -  Using Chrome Driver  
+02-Nov-2020-21:25:30 [SeleniumWebdriver.ComponentHelper.BrowserHelper] [INFO] [BrowserMaximize] -  Browser Maximize 
+02-Nov-2020-21:25:32 [SeleniumWebdriver.ComponentHelper.NavigationHelper] [INFO] [NavigateToUrl] -  Navigate To Page http://localhost/
+02-Nov-2020-21:25:32 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait to 1 sec 
+02-Nov-2020-21:25:32 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [GetWebdriverWait] -  Wait Object Created 
+02-Nov-2020-21:25:32 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait Configured value 
+02-Nov-2020-21:25:32 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.XPath: //a[@id='enter_bug']/span
+02-Nov-2020-21:25:33 [SeleniumWebdriver.ComponentHelper.ButtonHelper] [INFO] [ClickButton] -  Button Click @ By.XPath: //a[@id='enter_bug']/span
+02-Nov-2020-21:25:33 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait to 1 sec 
+02-Nov-2020-21:25:33 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [GetWebdriverWait] -  Wait Object Created 
+02-Nov-2020-21:25:33 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait Configured value 
+02-Nov-2020-21:25:33 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.Id: Bugzilla_login
+02-Nov-2020-21:25:34 [SeleniumWebdriver.ComponentHelper.TextBoxHelper] [INFO] [TypeInTextBox] -  Type in Textbox @ By.Id: Bugzilla_login : value : rahul@bugzila.com
+02-Nov-2020-21:25:34 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.Id: Bugzilla_password
+02-Nov-2020-21:25:34 [SeleniumWebdriver.ComponentHelper.TextBoxHelper] [INFO] [TypeInTextBox] -  Type in Textbox @ By.Id: Bugzilla_password : value : welcome
+02-Nov-2020-21:25:34 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.Id: log_in
+02-Nov-2020-21:25:35 [SeleniumWebdriver.ComponentHelper.ButtonHelper] [INFO] [ClickButton] -  Button Click @ By.Id: log_in
+02-Nov-2020-21:25:35 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait to 1 sec 
+02-Nov-2020-21:25:35 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [GetWebdriverWait] -  Wait Object Created 
+02-Nov-2020-21:25:35 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait Configured value 
+02-Nov-2020-21:25:35 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.PartialLinkText: Testng
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.ButtonHelper] [INFO] [ClickButton] -  Button Click @ By.PartialLinkText: Testng
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait to 1 sec 
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [GetWebdriverWait] -  Wait Object Created 
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait Configured value 
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.Id: bug_severity
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.Id: short_desc
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.TextBoxHelper] [INFO] [TypeInTextBox] -  Type in Textbox @ By.Id: short_desc : value : Keyword Driven Frame Work
+02-Nov-2020-21:25:36 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [IsElemetPresent] -  Checking for the element By.XPath: //div[@id='header']/ul[1]/li[11]/a
+02-Nov-2020-21:25:37 [SeleniumWebdriver.ComponentHelper.ButtonHelper] [INFO] [ClickButton] -  Button Click @ By.XPath: //div[@id='header']/ul[1]/li[11]/a
+02-Nov-2020-21:25:37 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait to 1 sec 
+02-Nov-2020-21:25:37 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [GetWebdriverWait] -  Wait Object Created 
+02-Nov-2020-21:25:37 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait Configured value 
+02-Nov-2020-21:25:38 [SeleniumWebdriver.ComponentHelper.NavigationHelper] [INFO] [NavigateToUrl] -  Navigate To Page http://localhost/
+02-Nov-2020-21:25:38 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [WaitForWebElementInPage] -  Setting the Explicit wait to 1 sec 
+02-Nov-2020-21:25:38 [SeleniumWebdriver.ComponentHelper.GenericHelper] [INFO] [GetWebdriverWait] -  Wait Object Created 

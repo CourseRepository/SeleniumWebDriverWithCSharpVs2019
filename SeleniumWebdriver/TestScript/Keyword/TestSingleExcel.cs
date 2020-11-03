@@ -15,7 +15,7 @@ namespace SeleniumWebdriver.TestScript.Keyword
         public void TestReadWriteSingleExcel()
         {
             var keyword = new DataEngineUtility();
-            keyword.ExecuteScript("SingleExcel.xlsx", "TestSuite", "TestCases");
+            keyword.ExecuteScript(@"C:\Data\log\KeywordTwo.xlsx", "TestSuite", "TC01");
         }
 
     }
