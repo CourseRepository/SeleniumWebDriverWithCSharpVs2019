@@ -21,6 +21,8 @@ namespace SeleniumWebdriver.GeneralHook
         public static void BeforeTestRun()
         {
             _extentHtmlReporter = new ExtentHtmlReporter(@"C:\Data\log\");
+            _extentHtmlReporter.Config.ReportName = "testreport.html";
+            _extentHtmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
             _extentReports = new ExtentReports();
             _extentReports.AttachReporter(_extentHtmlReporter);
         }

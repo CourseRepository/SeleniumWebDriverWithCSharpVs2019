@@ -113,7 +113,7 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("User should be at Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.When("I provide the \"rahul@bugzila.com\", \"rathore\" and click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I provide the \"rahul@bugzila.com\", \"welcome\" and click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.Then("User Should be at Enter Bug page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14

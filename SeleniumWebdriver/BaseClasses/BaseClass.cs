@@ -58,7 +58,6 @@ namespace SeleniumWebdriver.BaseClasses
         {
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("start-maximized");
-
             option.AddAdditionalCapability(CapabilityType.AcceptSslCertificates, true, true);
             //option.AddArgument("--headless");
             //option.AddExtension(@"C:\Users\rahul.rathore\Desktop\Cucumber\extension_3_0_12.crx");
@@ -186,6 +185,7 @@ namespace SeleniumWebdriver.BaseClasses
             ObjectRepository.Driver.Manage()
                 .Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeOut());
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut());
+            ObjectRepository.Driver.Manage().Cookies.DeleteAllCookies();
             BrowserHelper.BrowserMaximize();
         }
 

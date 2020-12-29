@@ -279,21 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Keyword\DataEngineUtil\ExcelStructure\ExcelFile.JPG" />
-    <Content Include="Resources - Copy\chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources - Copy\DeploymentItemTestFile.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources - Copy\FileUpload.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources - Copy\IEDriverServer.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources - Copy\SampleFile.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\DeploymentItemTestFile.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -309,6 +294,7 @@
     <None Include="DataDriven\TestDataFiles\ExcelData.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="DataDriven\TestDataFiles\TestScenarioSteps.xlsx" />
     <None Include="ExcelReader\DataFiles\KeywordOne.xlsx" />
     <None Include="ExcelReader\DataFiles\KeywordTwo.xlsx" />
     <None Include="FeatureFiles\Arguments.feature" />
@@ -330,9 +316,6 @@
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Resources - Copy\ExcelData.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\ExcelData.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
