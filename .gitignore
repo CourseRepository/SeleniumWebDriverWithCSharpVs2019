@@ -58,6 +58,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 packages/
+.vs/
 
 # Kernel Module Compile Results
 *.mod*
