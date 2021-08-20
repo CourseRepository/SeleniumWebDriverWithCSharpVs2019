@@ -13,6 +13,13 @@ using TechTalk.SpecFlow;
 
 namespace SeleniumWebdriver.StepDefinition
 {
+
+
+    //https://docs.specflow.org/projects/specflow/en/latest/Integrations/MsTest.html#deploymentitem
+
+    //https://github.com/SpecFlowOSS/SpecFlow/issues/803
+
+
     [Binding]
     public partial class FileUploadStepDfn
     {
@@ -53,7 +60,7 @@ namespace SeleniumWebdriver.StepDefinition
             };
             using (var process = Process.Start(processinfo))
             {
-                    process.WaitForExit();
+                process.WaitForExit();
             }
             Thread.Sleep(5000);
         }
