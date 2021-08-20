@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumWebdriver.StepDefinition
 {
-    [DeploymentItem("Resources")]
+    //[DeploymentItem("Resources")]
     public partial class FileUploadStepDfn
     {
     }

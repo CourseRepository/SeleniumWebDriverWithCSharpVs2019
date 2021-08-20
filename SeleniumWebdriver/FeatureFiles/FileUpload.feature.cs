@@ -44,7 +44,8 @@ namespace SeleniumWebdriver.FeatureFiles
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "File Upload", "\tFile upload using MSTest deployment attribute", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "File Upload", "\tFile upload using MSTest deployment attribute", ProgrammingLanguage.CSharp, new string[] {
+                        "MsTest:DeploymentItem:Resources"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -90,6 +91,7 @@ namespace SeleniumWebdriver.FeatureFiles
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("File Upload with deployment attribute")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "File Upload")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DeploymentItemAttribute("Resources")]
         public virtual void FileUploadWithDeploymentAttribute()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("File Upload with deployment attribute", null, ((string[])(null)));
