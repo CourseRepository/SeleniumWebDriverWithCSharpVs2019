@@ -59,8 +59,9 @@ namespace SeleniumWebdriver.TestScript.Popups
             JavaScriptPopHelper.ClickCancelOnPopup();
             ObjectRepository.Driver.SwitchTo().DefaultContent();
             GenericHelper.WaitForWebElement(By.Id("textareaCode"), TimeSpan.FromSeconds(60));
-            //TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
-            //TextBoxHelper.TypeInTextBox(By.Id("textareaCode"), text);
+            JavaScriptExecutor.ExecuteScript("document.getElementById('textareaCode').style.display='block';");
+            TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
+            TextBoxHelper.TypeInTextBox(By.Id("textareaCode"), text);
             //confirm = ObjectRepository.Driver.SwitchTo().Alert();
             //confirm.Dismiss();
             Logger.Info("Test Confirm Popup Complete");
@@ -83,8 +84,9 @@ namespace SeleniumWebdriver.TestScript.Popups
             JavaScriptPopHelper.ClickCancelOnPopup();
             ObjectRepository.Driver.SwitchTo().DefaultContent();
             GenericHelper.WaitForWebElement(By.Id("textareaCode"), TimeSpan.FromSeconds(60));
-            //TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
-            //TextBoxHelper.TypeInTextBox(By.Id("textareaCode"), text);
+            JavaScriptExecutor.ExecuteScript("document.getElementById('textareaCode').style.display='block';");
+            TextBoxHelper.ClearTextBox(By.Id("textareaCode"));
+            TextBoxHelper.TypeInTextBox(By.Id("textareaCode"), text);
             //IAlert prompt = ObjectRepository.Driver.SwitchTo().Alert();
             //prompt.SendKeys("This is automation");
             //prompt.Accept();
