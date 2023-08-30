@@ -194,7 +194,19 @@ namespace SeleniumWebdriver.ComponentHelper
             return false;
         }
 
+        public static Func<IWebDriver, IWebElement> ElementIsVisible(IWebElement webElement) => (Func<IWebDriver, IWebElement>)(driver =>
+        {
+            try
+            {
+                return ElementIfVisible(webElement);
+            }
+            catch (StaleElementReferenceException ex)
+            {
+                return null;
+            }
+        });
 
+        private static IWebElement ElementIfVisible(IWebElement element) => !element.Displayed ? null : element;
 
     }
 }
